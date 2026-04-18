@@ -2,6 +2,7 @@
 """
 DOCSTRING
 """
+
 from flask import Flask, render_template, request
 from .calculadora import sumar, restar, multiplicar, dividir
 
@@ -14,6 +15,7 @@ def index():
     DOCSTRING
     """
     return render_template("index.html", resultado=None)
+
 
 @app.route("/", methods=["POST"])
 def index():
@@ -43,6 +45,7 @@ def index():
             resultado = "Error: No se puede dividir por cero"
 
     return render_template("index.html", resultado=resultado)
+
 
 if __name__ == "__main__":  # pragma: no cover
     # Quita debug=True para producción
